@@ -25,6 +25,7 @@ MonoBehaviour:
     m_Bits: 128
   onHitEffects:
   - {fileID: 11400000, guid: 98064d11cdfee304586f82590f1f6f51, type: 2}
+  - {fileID: 11400000, guid: 59703fc8e1dde5b45a7fb36f1e554ceb, type: 2}
   hitVFX: {fileID: 0}
   launchSound: {fileID: 0}
   hitSound: {fileID: 0}

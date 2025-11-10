@@ -20,4 +20,4 @@ MonoBehaviour:
   Cost: 10
   ResourceType: Mana
   EffectsToApply:
-  - {fileID: 11400000, guid: 6240ba01182c787489673d8abd9a9ea9, type: 2}
+  - {fileID: 11400000, guid: cba073893b4d659408555c1d02c01a83, type: 2}
