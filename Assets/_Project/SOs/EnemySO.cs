@@ -6,4 +6,5 @@ public class EnemySO : ScriptableObject
     public int MaxHealth;
     public int Speed;
     public int Damage;
+    public int Reward;
 }

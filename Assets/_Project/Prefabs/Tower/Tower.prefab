@@ -98,7 +98,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UISliderBarHelper, Assembly-CSharp
-        m_MethodName: SetValue
+        m_MethodName: UpdateValue
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 3313147225892668617}
   - component: {fileID: 3387064030610986042}
   - component: {fileID: 7126624033275370783}
+  - component: {fileID: 2680375473895705055}
   m_Layer: 6
   m_Name: Tower
   m_TagString: Tower
@@ -299,6 +300,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerStatsManager
   towerModelData: {fileID: 11400000, guid: 39ad6df106780f945b8f6825d59d7b89, type: 2}
   currentStats: {fileID: 11400000, guid: a56933a6f69e5fb428e2ad0b578eb728, type: 2}
+--- !u!114 &2680375473895705055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237362877633147983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c713f54b92d67948bd251c8c14b57b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 1
+  currentHealth: 1
+  showDebugLogs: 0
 --- !u!1 &7881402381194920786
 GameObject:
   m_ObjectHideFlags: 0

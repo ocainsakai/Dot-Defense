@@ -36,7 +36,7 @@ public class TowerStatUI : MonoBehaviour
     /// <summary>
     /// Được gọi bởi sự kiện global khi có một tower mới được active.
     /// </summary>
-    private void HandleNewTowerStats(TowerRuntimeSO newStats)
+    public void HandleNewTowerStats(TowerRuntimeSO newStats)
     {
         // 1. Hủy đăng ký listener khỏi SO cũ (nếu có)
         UnsubscribeFromCurrentStats();

@@ -8,7 +8,7 @@ using UnityEngine.Events;
 /// </summary>
 public class PlayerWallet : MonoBehaviour, IResourceProvider
 {
-
+    public static PlayerWallet  instance;
     [Header("Runtime State")]
     [Tooltip("Số tiền hiện tại của người chơi")]
     [SerializeField] private int currentMoney;
@@ -20,7 +20,15 @@ public class PlayerWallet : MonoBehaviour, IResourceProvider
 
     private void Awake()
     {
-        LoadMoney();
+        if (instance == null)
+        {
+            instance = this;
+            LoadMoney();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Start()

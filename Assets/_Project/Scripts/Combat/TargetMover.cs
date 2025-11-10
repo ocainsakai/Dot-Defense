@@ -188,7 +188,7 @@ public abstract class TargetMover : MonoBehaviour
     public void SetTarget(Transform newTarget, bool resetMovement = true)
     {
         target = newTarget;
-        hasInitialDirection = false; // <-- QUAN TRỌNG: Reset để tính lại hướng
+        hasInitialDirection = false; 
         
         if (resetMovement)
         {

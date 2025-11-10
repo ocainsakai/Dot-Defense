@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     // Dùng { get; private set; } để đóng gói (encapsulation)
     public Health health { get; private set; }
 
-    private MoveEnemy movement;
+    private TargetMover movement;
 
     [Header("Data (Injected by Spawner)")] private EnemySO enemySo;
     private string poolTag;
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     {
         // Lấy các component mà nó điều khiển
         health = GetComponent<Health>();
-        movement = GetComponent<MoveEnemy>();
+        movement = GetComponent<TargetMover>();
     }
 
     /// <summary>
@@ -79,13 +79,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         // Reset vị trí/di chuyển
         if (movement != null)
         {
-            movement.ResetMovement();
-
-            // Cập nhật tốc độ từ SO (rất quan trọng!)
-            if (enemySo != null)
-            {
-                movement.SetMoveSpeed(enemySo.Speed);
-            }
+            movement.ResetSpeed();
         }
     }
 
@@ -109,6 +103,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     /// </summary>
     public void Die()
     {
+        PlayerWallet.instance.AddMoney(enemySo.Reward);
         // Failsafe
         if (string.IsNullOrEmpty(poolTag) || ObjectPooler.Instance == null)
         {

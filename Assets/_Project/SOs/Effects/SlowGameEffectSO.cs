@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SlowGameEffectSo", menuName = "Scriptable Objects/SlowGameEffectSo")]
-public class SlowGameEffectSo: GameEffectSO
+[CreateAssetMenu(fileName = "SlowGameEffectSO", menuName = "Scriptable Objects/SlowGameEffectSO")]
+public class SlowGameEffectSO: GameEffectSO
 {
     [Header("Slow Settings")]
     [SerializeField] [Range(0f, 1f)] private float slowPercentage = 0.5f; // 50% slow
@@ -11,15 +11,15 @@ public class SlowGameEffectSo: GameEffectSO
     public override void ApplyEffect(GameObject target, float damageMultiplier = 1f)
     {
         // Tìm EnemyMovement component (hoặc interface ISlowable)
-        MoveEnemy movement = target.GetComponent<MoveEnemy>();
+        TargetMover movement = target.GetComponent<TargetMover>();
         if (movement == null)
         {
             Debug.LogWarning($"No EnemyMovement component found on {target.name}");
             return;
         }
         
-        // Apply slow
-        movement.ApplySlowEffect(slowPercentage, duration);
+        
+        movement.ApplySlow(slowPercentage, duration);
         
         // Effects
         SpawnVFX(target.transform.position);

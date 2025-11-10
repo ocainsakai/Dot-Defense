@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// MỘT NHIỆM VỤ: Khởi tạo và Quản lý Data của Tower.
@@ -21,9 +22,16 @@ public class TowerStatsManager : MonoBehaviour
     
     // --- KHỞI TẠO ---
     public static Action<TowerRuntimeSO> OnTowerStatsInitialized;
+
+    public UnityEvent<TowerRuntimeSO> OnStatChange;
     private void Awake()
     {
         Initialize();
+    }
+
+    private void Start()
+    {
+        OnStatChange?.Invoke(Stats);
     }
 
     /// <summary>

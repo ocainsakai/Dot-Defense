@@ -6,8 +6,6 @@ public class UIManager : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private GameObject startPanel;
-    [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private GameObject upgradePanel;
     [SerializeField] private GameObject gameplayHUD;
 
     [Header("Core Components")]
@@ -19,11 +17,7 @@ public class UIManager : MonoBehaviour
     
     [Header("Buttons")]
     [SerializeField] private Button startButton;
-    [Tooltip("Nút 'Thử lại' trên panel GameOver")]
-    [SerializeField] private Button retryButton; // Đã đổi tên từ restartButton
-    [SerializeField] private Button upgradeButton_Menu;
-    [SerializeField] private Button upgradeButton_GameOver;
-    [SerializeField] private Button closeUpgradePanelButton;
+
 
     void Start()
     {
@@ -33,16 +27,6 @@ public class UIManager : MonoBehaviour
         startButton?.onClick.AddListener(() => {
             GameManager.Instance.StartGame();
         });
-       
-        // 2. Nút Retry (Thử lại wave)
-        retryButton?.onClick.AddListener(() => {
-            GameManager.Instance.RetryWave();
-        });
-
-        // 3. Các nút Upgrade
-        upgradeButton_Menu?.onClick.AddListener(ShowUpgradePanel);
-        upgradeButton_GameOver?.onClick.AddListener(ShowUpgradePanel);
-        closeUpgradePanelButton?.onClick.AddListener(HideUpgradePanel);
 
         // 4. Tự động đăng ký nghe sự kiện Wave
         if (waveManager != null)
@@ -79,28 +63,11 @@ public class UIManager : MonoBehaviour
         gameplayHUD.SetActive(true);
     }
     
-    public void ShowGameOverPanel()
-    {
-        HideAllPanels();
-        gameOverPanel.SetActive(true);
-    }
-
-    public void ShowUpgradePanel()
-    {
-        upgradePanel.SetActive(true);
-    }
-
-    public void HideUpgradePanel()
-    {
-        upgradePanel.SetActive(false);
-    }
-
+  
     private void HideAllPanels()
     {
         // Thêm kiểm tra null
         startPanel?.SetActive(false);
-        gameOverPanel?.SetActive(false);
-        upgradePanel?.SetActive(false);
         gameplayHUD?.SetActive(false);
     }
 

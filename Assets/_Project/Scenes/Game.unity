@@ -3941,10 +3941,6 @@ PrefabInstance:
       propertyPath: OnManaChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1351836950}
-    - target: {fileID: 1447198984683571493, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
-      propertyPath: OnManaChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateValue
-      objectReference: {fileID: 0}
     - target: {fileID: 3736191557717592896, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3986,8 +3982,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7126624033275370783, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: OnStatChange.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126624033275370783, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
+      propertyPath: OnStatChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2130332444}
+    - target: {fileID: 7126624033275370783, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
+      propertyPath: OnStatChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126624033275370783, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
+      propertyPath: OnStatChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleNewTowerStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126624033275370783, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
+      propertyPath: OnStatChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerStatUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126624033275370783, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
+      propertyPath: OnStatChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7237362877633147983, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
       propertyPath: m_Name
@@ -3996,16 +4012,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7237362877633147983, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2140411105}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
---- !u!1 &1901761318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7237362877633147983, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
-  m_PrefabInstance: {fileID: 1901761317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1914742618 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5692015377535017466, guid: 6b4aaa8f02b3e6d47b341f16af1fade4, type: 3}
@@ -4324,27 +4332,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3387064030610986042, guid: 22798cdc983588d4ba78a12186365b35, type: 3}
   m_PrefabInstance: {fileID: 1901761317}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901761318}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1e62130e3878724e886dbdb3d92e30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTower
---- !u!114 &2140411105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901761318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c713f54b92d67948bd251c8c14b57b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 1
-  currentHealth: 1
-  showDebugLogs: 0
 --- !u!1 &2145261292
 GameObject:
   m_ObjectHideFlags: 0

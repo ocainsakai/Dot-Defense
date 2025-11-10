@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "StunGameEffectSo", menuName = "Scriptable Objects/StunGameEffectSo")]
-public class StunGameEffectSo: GameEffectSO
+[CreateAssetMenu(fileName = "StunGameEffectSO", menuName = "Scriptable Objects/StunGameEffectSO")]
+public class StunGameEffectSO: GameEffectSO
 {
     [Header("Stun Settings")]
     [SerializeField] private float duration = 1.5f;
@@ -9,7 +9,7 @@ public class StunGameEffectSo: GameEffectSO
     
     public override void ApplyEffect(GameObject target, float damageMultiplier = 1f)
     {
-        MoveEnemy movement = target.GetComponent<MoveEnemy>();
+        TargetMover movement = target.GetComponent<TargetMover>();
         if (movement == null)
         {
             Debug.LogWarning($"No EnemyMovement component found on {target.name}");
@@ -17,7 +17,7 @@ public class StunGameEffectSo: GameEffectSO
         }
         
         // Apply stun
-        movement.ApplyStun(duration, canRefresh);
+        movement.ApplyStun(duration);
         
         // Effects
         SpawnVFX(target.transform.position);

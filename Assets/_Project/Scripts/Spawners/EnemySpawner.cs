@@ -44,13 +44,7 @@ public class EnemySpawner : MonoBehaviour
         {
             // 3a. Tiêm (Inject) data
             enemyScript.Setup(type.enemyStats, type.poolTag);
-
-            // 3b. Gán mục tiêu
-            MoveEnemy moveScript = enemyGO.GetComponent<MoveEnemy>();
-            if (moveScript != null)
-            {
-                moveScript.SetTarget(targetBase);
-            }
+            
 
             // 3c. Đăng ký theo dõi cái chết
             Health enemyHealth = enemyScript.health;
