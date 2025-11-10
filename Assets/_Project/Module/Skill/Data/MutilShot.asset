@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206ea8b147044d4cab112bbaf7efc9fa, type: 3}
+  m_Name: MutilShot
+  m_EditorClassIdentifier: Assembly-CSharp::ActiveSkillSO
+  SkillID: 
+  DisplayName: 
+  Icon: {fileID: 0}
+  Description: 
+  Cooldown: 0
+  Cost: 10
+  ResourceType: Mana
+  EffectsToApply:
+  - {fileID: 11400000, guid: 2f687203cf434c849871d59b58b9475e, type: 2}
