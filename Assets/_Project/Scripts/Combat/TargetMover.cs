@@ -217,7 +217,11 @@ public abstract class TargetMover : MonoBehaviour
 
     public void ApplySlow(float multiplier, float duration)
     {
-        if (slowCoroutine != null) StopCoroutine(slowCoroutine);
+        if (!gameObject.activeInHierarchy || !this.enabled)
+        {
+            return; 
+        }
+        StopAllCoroutines();
         slowCoroutine = StartCoroutine(SlowCoroutine(multiplier, duration));
     }
 
@@ -231,7 +235,11 @@ public abstract class TargetMover : MonoBehaviour
 
     public void ApplyStun(float duration)
     {
-        if (stunCoroutine != null) StopCoroutine(stunCoroutine);
+        if (!gameObject.activeInHierarchy || !this.enabled)
+        {
+            return; 
+        }
+        StopAllCoroutines();
         stunCoroutine = StartCoroutine(StunCoroutine(duration));
     }
 

@@ -9,6 +9,7 @@ using UnityEngine.Events;
 /// </summary>
 public class TowerStatsManager : MonoBehaviour
 {
+    public static TowerStatsManager instance;
     [Header("Data Definition (Input)")]
     [Tooltip("ĐỊNH NGHĨA: Gán TowerTypeDataSO (ví dụ: Fire Tower Lvl 1) vào đây.")]
     [SerializeField] private TowerTypeDataSO towerModelData;
@@ -26,14 +27,29 @@ public class TowerStatsManager : MonoBehaviour
     public UnityEvent<TowerRuntimeSO> OnStatChange;
     private void Awake()
     {
-        Initialize();
+        if (instance == null)
+        {
+            instance = this;
+            Initialize();
+        }
+        else
+        {
+            Destroy(gameObject);    
+        }
     }
 
     private void Start()
     {
-        OnStatChange?.Invoke(Stats);
+        OnUpdateStat();
     }
 
+    public void OnUpdateStat()
+    {
+        StatsCalculator.CalculateAndApplyStats(towerModelData, currentStats);
+        OnTowerStatsInitialized?.Invoke(Stats);
+        OnStatChange?.Invoke(Stats);
+        
+    }
     /// <summary>
     /// Tự đọc data, tính stats, set sprite và đăng ký pool.
     /// </summary>

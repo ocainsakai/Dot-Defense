@@ -9,11 +9,11 @@ using TMPro;
 public class TowerStatUI : MonoBehaviour
 {
     [Header("UI Components")]
-    [SerializeField] private TextMeshProUGUI attackText;
-    [SerializeField] private TextMeshProUGUI speedText;
-    [SerializeField] private TextMeshProUGUI rangeText;
-    [SerializeField] private TextMeshProUGUI maxManaText;
-    [SerializeField] private TextMeshProUGUI manaRegenText;
+    [SerializeField] private GameObject attackText;
+    [SerializeField] private GameObject speedText;
+    [SerializeField] private GameObject rangeText;
+    [SerializeField] private GameObject maxManaText;
+    [SerializeField] private GameObject manaRegenText;
 
     // Biến để lưu trữ SO hiện tại đang lắng nghe
     private TowerRuntimeSO currentTowerStats;
@@ -84,30 +84,54 @@ public class TowerStatUI : MonoBehaviour
 
         // "F1" = 1 chữ số thập phân, "F0" = 0 chữ số thập phân
         if (attackText != null)
-            attackText.text = currentTowerStats.Attack.ToString("F1");
-
+            UpdateElement(attackText,"ATTACK", currentTowerStats.Attack);
         if (speedText != null)
-            speedText.text = currentTowerStats.AttackSpeed.ToString("F1");
+            UpdateElement(speedText,"ATTACK SPEED", currentTowerStats.AttackSpeed);
 
         if (rangeText != null)
-            rangeText.text = currentTowerStats.Range.ToString("F1");
+            UpdateElement(rangeText,"RANGE", currentTowerStats.Range);
 
         if (maxManaText != null)
-            maxManaText.text = currentTowerStats.MaxMana.ToString("F0");
+            UpdateElement(maxManaText,"MANA", currentTowerStats.MaxMana);
 
         if (manaRegenText != null)
-            manaRegenText.text = currentTowerStats.ManaRegenRate.ToString("F1");
+            UpdateElement(manaRegenText,"MANA REGEN", currentTowerStats.ManaRegenRate);
     }
 
-    /// <summary>
-    /// Dọn dẹp UI khi không có Tower nào được chọn
-    /// </summary>
+    private void UpdateElement(GameObject go, string title, float value)
+    {
+        var titleComponent = go.transform.Find("Title").GetComponent<TextMeshProUGUI>();
+        var valueComponent = go.transform.Find("Value").GetComponent<TextMeshProUGUI>();
+        var upgradeComponent = go.GetComponentInChildren<UIUpgradeButton>();
+        titleComponent.text = title;
+        valueComponent.text = value.ToString("F1");
+        upgradeComponent.UpgradeCost = 100;
+    }
+    private void ClearElement(GameObject go, string title)
+    {
+        // Kiểm tra an toàn
+        if (go == null) return; 
+
+        // Tìm các component con (Dùng '?' để tránh lỗi nếu không tìm thấy)
+        var titleComponent = go.transform.Find("Title")?.GetComponent<TextMeshProUGUI>();
+        var valueComponent = go.transform.Find("Value")?.GetComponent<TextMeshProUGUI>();
+
+        if (titleComponent != null)
+        {
+            titleComponent.text = title;
+        }
+        if (valueComponent != null)
+        {
+            valueComponent.text = "-"; // Ký tự mặc định
+        }
+    }
+    
     private void ClearUI()
     {
-        if (attackText != null) attackText.text = "-";
-        if (speedText != null) speedText.text = "-";
-        if (rangeText != null) rangeText.text = "-";
-        if (maxManaText != null) maxManaText.text = "-";
-        if (manaRegenText != null) manaRegenText.text = "-";
+        ClearElement(attackText, "ATTACK");
+        ClearElement(speedText, "ATTACK SPEED");
+        ClearElement(rangeText, "RANGE");
+        ClearElement(maxManaText, "MANA");
+        ClearElement(manaRegenText, "MANA REGEN");
     }
 }
