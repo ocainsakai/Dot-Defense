@@ -92,7 +92,6 @@ public class GameManager : MonoBehaviour
                 break;
                 
             case GameState.GameOver:
-                uiManager.ShowGameOverPanel();
                 Time.timeScale = 0f; 
                 waveManager.StopWaves();
                 break;
