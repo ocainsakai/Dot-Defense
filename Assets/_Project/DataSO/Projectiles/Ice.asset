@@ -28,5 +28,5 @@ MonoBehaviour:
   hitVFX: {fileID: 0}
   launchSound: {fileID: 0}
   hitSound: {fileID: 0}
-  poolTag: Projectile
+  poolTag: IceProjectile
   poolSize: 20
