@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d1c2a7d0399988f44bc03530dd198c14
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246299
+  packageName: Rainbow Jump - Complete Mobile Game Template
+  packageVersion: 1.0
+  assetPath: Assets/Rainbow Jump/Scripts/Spawner.cs
+  uploadId: 602976

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 85c4a87871990924d98bc2fdaabaf5c8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246299
+  packageName: Rainbow Jump - Complete Mobile Game Template
+  packageVersion: 1.0
+  assetPath: Assets/Rainbow Jump/Animations/GameOver.anim
+  uploadId: 602976

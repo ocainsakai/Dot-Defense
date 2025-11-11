@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a8b339c0a9c24ab4d8470dc8436de70d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246299
+  packageName: Rainbow Jump - Complete Mobile Game Template
+  packageVersion: 1.0
+  assetPath: Assets/Rainbow Jump/Prefabs/ObstacleCloseDoors.prefab
+  uploadId: 602976

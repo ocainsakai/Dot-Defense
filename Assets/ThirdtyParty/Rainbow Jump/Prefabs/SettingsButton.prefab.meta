@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 757b5f9630dcb3446802d48be501a4fd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246299
+  packageName: Rainbow Jump - Complete Mobile Game Template
+  packageVersion: 1.0
+  assetPath: Assets/Rainbow Jump/Prefabs/SettingsButton.prefab
+  uploadId: 602976

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 298da4c3e82c10349bb8979d2754696b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246299
+  packageName: Rainbow Jump - Complete Mobile Game Template
+  packageVersion: 1.0
+  assetPath: Assets/Rainbow Jump/Scripts/SettingsButton.cs
+  uploadId: 602976

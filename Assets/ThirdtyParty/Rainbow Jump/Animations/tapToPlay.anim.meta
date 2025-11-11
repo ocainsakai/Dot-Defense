@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e8d930b30292ba40bcfc89239373abf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 246299
+  packageName: Rainbow Jump - Complete Mobile Game Template
+  packageVersion: 1.0
+  assetPath: Assets/Rainbow Jump/Animations/tapToPlay.anim
+  uploadId: 602976
